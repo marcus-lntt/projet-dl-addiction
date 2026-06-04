@@ -26,18 +26,18 @@ jobs:
         run: uv python install ${{ matrix.python-version }}
 
       - name: Install dependencies
-        run: uv sync
+        run: uv sync --locked
 
       - name: Run tests
         run: uv run pytest tests/ -v --tb=short
 
       - name: Check imports
         run: |
-          uv run python -c "
+          uv run python - <<'PY'
           from src.preprocessing import load_data, prepare_ml, FEATURES
           from src.models_ml import train_ridge
           from src.models_dl import MLP
           from src.models_advanced import TemporalTransformer
           from src.evaluation import regression_metrics
-          print('Tous les modules importent correctement.')
-          "
+          print("Tous les modules importent correctement.")
+          PY

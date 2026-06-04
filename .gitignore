@@ -1,9 +1,9 @@
 # Dataset — ne pas versionner (critère éliminatoire)
-data/
+data/*
 !data/.gitkeep
 
 # Modèles entraînés
-models/
+models/*
 !models/.gitkeep
 
 # Environnement Python
