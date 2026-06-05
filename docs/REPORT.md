@@ -21,3 +21,20 @@ La variable `ASI` est exclue des features car elle est fortement corrélée à l
 - Environnement : `uv` + `uv.lock` (installation stable)
 - Tests : `pytest` (préprocessing + shapes modèles)
 - CI : GitHub Actions (installation + tests automatisés)
+
+## Jalon 4 — Évaluation ML (biais / variance)
+
+### Métriques
+Les modèles ML sont évalués via des métriques de régression (ex. MSE, MAE, $R^2$) sur un split train/test.
+
+### Biais / variance
+L’évaluation inclut une analyse du compromis biais/variance :
+
+- **Sous-apprentissage (biais élevé)** : erreurs élevées en train *et* en test.
+- **Sur-apprentissage (variance élevée)** : erreur très basse en train, mais haute en test.
+
+Les courbes d’apprentissage (learning curves) permettent de visualiser ces régimes et d’ajuster la régularisation (`alpha`) et/ou la quantité de données.
+
+### Où retrouver dans le projet
+- Notebook : `notebooks/02_ml_baseline.ipynb` (section Jalon 4)
+- Code : `src/evaluation.py` (métriques/plots)
