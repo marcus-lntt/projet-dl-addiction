@@ -135,7 +135,6 @@ elif page == "🔮 Prédiction":
         with col3:
             attention = st.slider("Attention span score (0–100)", 0.0, 100.0, 70.0)
             dopamine = st.slider("Dopamine dependency (0–100)", 0.0, 100.0, 30.0)
-            anxiety = st.slider("ASI — Anxiety Score Index (0–100)", 0.0, 100.0, 40.0)
 
         submitted = st.form_submit_button("Prédire")
 
@@ -169,7 +168,6 @@ elif page == "🔮 Prédiction":
             "impulsivity_index": _get("impulsivity_index", 50.0),
             "sleep_hours": sleep_h,
             "sleep_quality_index": _get("sleep_quality_index", 6.0),
-            "ASI": anxiety,
             "MHRI": _get("MHRI", 60.0),
             "country_enc": country_enc,
         }
