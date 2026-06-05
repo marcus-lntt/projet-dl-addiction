@@ -57,3 +57,21 @@ Améliorer la performance et la stabilité d’entraînement du MLP via une rech
 ### Où retrouver dans le projet
 - Notebook : `notebooks/03_dl_fondamental.ipynb` (section Jalon 6)
 - Code : `src/models_dl.py` (training loop)
+
+## Jalon 7 — Évaluation DL (comparaison et limites)
+
+### Objectif
+Comparer l’approche Deep Learning à la baseline ML, en gardant une évaluation cohérente (split identique, métriques comparables) et en discutant les limites.
+
+### Résultats et comparaison
+- Les modèles DL peuvent capturer des non-linéarités (au prix d’un risque d’overfitting plus élevé si dataset limité)
+- Baselines ML (Ridge/Lasso) : plus simples, plus rapides, souvent très compétitives sur données tabulaires
+
+### Limites et points d’attention
+- Temps d’entraînement et variabilité (seed, initialisation)
+- Sensibilité aux hyperparamètres
+- Interprétabilité plus faible que les modèles linéaires
+
+### Où retrouver dans le projet
+- Notebooks : `notebooks/03_dl_fondamental.ipynb` (MLP) et `notebooks/04_dl_avance.ipynb` (Transformer)
+- Code : `src/models_dl.py` et `src/models_advanced.py`
