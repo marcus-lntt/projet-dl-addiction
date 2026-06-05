@@ -39,6 +39,27 @@ Les courbes d’apprentissage (learning curves) permettent de visualiser ces ré
 - Notebook : `notebooks/02_ml_baseline.ipynb` (section Jalon 4)
 - Code : `src/evaluation.py` (métriques/plots)
 
+## Jalon 5 — Architecture (choix MLP vs CNN vs RNN)
+
+### Nature des données
+Le problème principal est une **régression** sur des variables essentiellement **tabulaires** (pays, année, métriques d’usage/réseaux sociaux). Il n’y a pas de structure spatiale (pixels, cartes, grilles) ni de voisinage local naturel.
+
+### Choix MLP (retenu)
+Un **MLP** (réseau fully-connected) est un choix cohérent pour :
+- des features tabulaires hétérogènes (numériques + encodages),
+- capturer des non-linéarités avec une complexité contrôlable,
+- fournir une baseline DL simple à entraîner et à comparer aux modèles ML.
+
+### Pourquoi pas CNN (ici)
+Les **CNN** exploitent des invariances locales (filtres, translation) et une **spatialité** (images, signaux 2D/3D). Dans ce dataset, les colonnes n’ont pas d’ordre spatial pertinent : appliquer des convolutions sur un vecteur de features serait arbitraire et rarement justifiable.
+
+### RNN (possible) et choix “séquences”
+Un **RNN** (LSTM/GRU) devient pertinent si on modélise explicitement des **séquences temporelles** (ex. historique par pays sur plusieurs années). Le projet explore cette dimension dans la partie “DL avancé” en construisant des séquences et en utilisant un modèle séquentiel (Transformer temporel) : même objectif qu’un RNN (dépendances temporelles), mais avec attention plutôt que récurrence.
+
+### Où retrouver dans le projet
+- MLP (baseline DL) : `src/models_dl.py` + `notebooks/03_dl_fondamental.ipynb`
+- Séquences + modèle temporel : `src/models_advanced.py` + `notebooks/04_dl_avance.ipynb`
+
 ## Jalon 6 — Optimisation DL (hyperparamètres)
 
 ### Objectif
