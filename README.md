@@ -8,6 +8,22 @@
 
 Objectif du rendu : un projet **reproductible**, **testé**, et présenté comme un mini-produit data (code modulaire + notebooks + app Streamlit + CI).
 
+## Problématique (le “pourquoi”)
+
+**Question** : peut-on estimer un score d’addiction aux réseaux sociaux à partir d’indicateurs d’usage (TikTok/Instagram), de variables pays et d’une dimension temporelle (2015–2060) ?
+
+**Enjeux** (dans un cadre data science) :
+- comprendre quels signaux d’usage sont associés à un score plus élevé,
+- fournir une estimation reproductible et comparable entre pays/années,
+- tester des approches de complexité croissante sans “tricher” (anti-leakage).
+
+**Approches comparées** :
+- Baselines **ML** tabulaires (Ridge/Lasso/ElasticNet) : rapides, robustes, très compétitives.
+- Baseline **DL** tabulaire (MLP PyTorch) : non-linéarités, capacité supérieure.
+- Modélisation **séquentielle** (Transformer temporel) : exploite des historiques par pays pour capturer des dynamiques temporelles.
+
+> Note : ce projet vise une **prédiction** (corrélation) et non une inférence causale.
+
 ## TL;DR (pour exécuter vite)
 
 1) Télécharger les 3 CSV Kaggle (voir section Dataset) et les placer dans `data/`.

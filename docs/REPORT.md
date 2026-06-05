@@ -3,6 +3,17 @@
 **Auteur : Marcus LINGUET**  
 **Repo :** https://github.com/marcus-lntt/projet-dl-addiction
 
+## Problématique & contribution
+
+**Problématique** : estimer un score d’addiction (`addiction_score`, 0–100) à partir d’indicateurs d’usage des réseaux sociaux (TikTok/Instagram), avec une dimension pays/année.
+
+**Approche** : comparer des modèles de complexité croissante, de manière reproductible (code modulaire + tests + CI) et sans fuite de données (exclusion de `ASI`).
+
+**Ce que montre le projet** :
+- une baseline ML tabulaire solide (régression régularisée) + analyse biais/variance,
+- une baseline DL tabulaire (MLP) avec stabilisation/optimisation,
+- une extension séquentielle via un modèle temporel (Transformer) quand on construit des séquences par pays.
+
 ## Jalon 1 — Data (choix et justification)
 
 ### Objectif
