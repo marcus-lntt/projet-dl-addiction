@@ -38,3 +38,22 @@ Les courbes d’apprentissage (learning curves) permettent de visualiser ces ré
 ### Où retrouver dans le projet
 - Notebook : `notebooks/02_ml_baseline.ipynb` (section Jalon 4)
 - Code : `src/evaluation.py` (métriques/plots)
+
+## Jalon 6 — Optimisation DL (hyperparamètres)
+
+### Objectif
+Améliorer la performance et la stabilité d’entraînement du MLP via une recherche d’hyperparamètres et des techniques anti-instabilité.
+
+### Recherche d’hyperparamètres
+- Méthode : Optuna (optimisation bayésienne / recherche guidée)
+- Exemples d’hyperparamètres explorés : profondeur, largeurs des couches, `dropout`, `learning rate`, `weight_decay`
+
+### Choix d’optimisation et stabilité gradient
+- Optimiseur : Adam (bon compromis stabilité/vitesse)
+- **BatchNorm** + **ReLU** : stabilisation des activations
+- **Gradient clipping** : limite l’explosion des gradients
+- Scheduler LR : réduction du LR sur plateau (ReduceLROnPlateau)
+
+### Où retrouver dans le projet
+- Notebook : `notebooks/03_dl_fondamental.ipynb` (section Jalon 6)
+- Code : `src/models_dl.py` (training loop)
