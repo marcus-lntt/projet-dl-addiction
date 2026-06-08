@@ -60,9 +60,44 @@ Source : Kaggle — TikTok & Instagram Addiction Dataset (2015–2060) (CC BY-NC
 
 Le dataset n’est **pas versionné** (voir `.gitignore`). Lien : https://www.kaggle.com/datasets/abdulmaliklodhra/tiktok-and-instagram-addiction-dataset-20152060
 
+## Données : qualité, préparation et limites
+
+### Préparation appliquée
+- chargement, nettoyage minimal et sélection de variables via `src/preprocessing.py`
+- encodage des variables catégorielles + normalisation pour les modèles sensibles à l’échelle
+- séparation train/test cohérente pour comparer ML et DL
+
+### Points d’attention sur les données
+- le dataset est de type **tabulaire synthétique/agrégé** (pas des traces individuelles brutes)
+- la colonne `ASI` est fortement liée à la cible (`addiction_score`) et peut créer une fuite de données
+- certaines relations apprises peuvent être corrélationnelles (pas causales)
+
+### Limites
+- généralisation réelle dépend de la qualité et de la représentativité des données source
+- la dimension temporelle est utile, mais reste simplifiée par rapport à des séries réelles bruitées
+
 ### Note importante — Data leakage
 
 La colonne `ASI` (Addiction Score Index) est exclue des features : elle encode directement la cible `addiction_score` (corrélation très élevée). Son exclusion rend la tâche réaliste et évite un faux score parfait.
+
+## Difficultés rencontrées (et solutions)
+
+- **Exécution notebooks / environnement** : configuration kernel + dépendances.  
+	**Solution** : environnement verrouillé avec `uv`/`uv.lock`, exécution reproductible et CI.
+
+- **Compatibilité PyTorch selon versions** (`ReduceLROnPlateau` et argument `verbose`).  
+	**Solution** : correction de compatibilité dans le code d’entraînement (`src/models_dl.py`).
+
+- **Risque de fuite de données** via `ASI`.  
+	**Solution** : exclusion explicite de `ASI` des features + cohérence appli/notebooks/docs.
+
+- **Comparaison équitable ML vs DL** : éviter des splits/métriques incohérents.  
+	**Solution** : pipeline commun de préprocessing et évaluation standardisée.
+
+## Cadre de réalisation
+
+- Projet réalisé **individuellement (sans binôme)**.
+- Assistance IA utilisée comme outil de pair-programming (voir section Transparence IA), avec relecture, compréhension et validation locale de tout le code.
 
 ## Architecture du projet
 
