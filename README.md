@@ -48,7 +48,7 @@ uv run streamlit run app/streamlit_app.py
 
 ## Dashboard interactif (Jalon 9)
 
-Oui, le projet inclut un **dashboard Streamlit interactif** dans `app/streamlit_app.py`.
+le projet inclut un **dashboard Streamlit interactif** dans `app/streamlit_app.py`.
 
 ### Pages disponibles
 - **🏠 Accueil** : contexte dataset + indicateurs globaux (observations, pays, années)
