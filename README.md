@@ -66,6 +66,22 @@ Oui, le projet inclut un **dashboard Streamlit interactif** dans `app/streamlit_
 - capacité à **simuler** des profils et obtenir une prédiction instantanée
 - capacité à **comparer** les approches ML/DL dans une interface unique
 
+## Captures d’écran du dashboard
+
+> Les captures ci-dessous sont attendues pour la correction visuelle du Jalon 9.
+
+### 1) Vue générale (Accueil)
+![Dashboard - Accueil](docs/screenshots/dashboard_home.png)
+
+### 2) Page Prédiction (formulaire + résultat)
+![Dashboard - Prédiction](docs/screenshots/dashboard_prediction.png)
+
+### 3) Exploration mondiale (carte)
+![Dashboard - Carte mondiale](docs/screenshots/dashboard_world_map.png)
+
+### 4) Tendances temporelles (courbes)
+![Dashboard - Tendances](docs/screenshots/dashboard_trends.png)
+
 ## Dataset
 
 Source : Kaggle — TikTok & Instagram Addiction Dataset (2015–2060) (CC BY-NC-SA 4.0)
