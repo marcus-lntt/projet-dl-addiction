@@ -46,6 +46,26 @@ uv run pytest -v
 uv run streamlit run app/streamlit_app.py
 ```
 
+## Dashboard interactif (Jalon 9)
+
+Oui, le projet inclut un **dashboard Streamlit interactif** dans `app/streamlit_app.py`.
+
+### Pages disponibles
+- **🏠 Accueil** : contexte dataset + indicateurs globaux (observations, pays, années)
+- **🔮 Prédiction** : formulaire utilisateur (âge, minutes TikTok/Instagram, sommeil, etc.) + prédiction en direct
+- **🌍 Exploration mondiale** : carte choroplèthe par pays et année
+- **📈 Tendances temporelles** : courbes d’évolution (2015–2060) par pays + tendance mondiale
+
+### Interactions clés
+- sliders / sélecteurs (année, métrique, pays)
+- comparaison de prédiction entre modèles (ML et DL)
+- visualisations dynamiques Plotly (map, lignes, aire)
+
+### Ce que démontre le dashboard
+- capacité à **explorer** les données (spatial + temporel)
+- capacité à **simuler** des profils et obtenir une prédiction instantanée
+- capacité à **comparer** les approches ML/DL dans une interface unique
+
 ## Dataset
 
 Source : Kaggle — TikTok & Instagram Addiction Dataset (2015–2060) (CC BY-NC-SA 4.0)
